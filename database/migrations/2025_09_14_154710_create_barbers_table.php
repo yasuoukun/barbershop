@@ -10,13 +10,11 @@ return new class extends Migration
     {
         Schema::create('barbers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->string('display_name');
             $table->decimal('commission_rate', 5, 2)->default(50.00); // ส่วนแบ่ง %
-            $table->text('bio')->nullable();
             $table->timestamps();
 
-            $table->index(['display_name']);
+            $table->index('display_name');
         });
     }
 

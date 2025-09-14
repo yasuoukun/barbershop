@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedInteger('price')->default(0);
             $table->timestamps();
 
-            $table->index(['name']);
+            $table->index('name');
         });
     }
 
